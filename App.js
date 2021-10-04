@@ -1,16 +1,17 @@
 import React from "react";
-import { Button, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
 import InicioScreen from "./src/Inicio/Screen/InicioScreen";
-import HomeScreen from "./src/Inicio/Screen/HomeScreen";
+import CartaScreen from "./src/Inicio/Screen/CartaScreen";
+import logo from "./assets/logo.png";
 
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Navigator initialRouteName="Inicio">
         <Drawer.Screen
           name="Inicio"
           component={InicioScreen}
@@ -26,10 +27,10 @@ export default function App() {
           }}
         />
         <Drawer.Screen
-          name="Home"
-          component={HomeScreen}
+          name="Carta"
+          component={CartaScreen}
           options={{
-            title: "Home",
+            title: "Carta",
             headerStyle: {
               backgroundColor: "#008080",
             },
@@ -42,4 +43,4 @@ export default function App() {
       </Drawer.Navigator>
     </NavigationContainer>
   );
-}
+};
